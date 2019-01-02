@@ -7,7 +7,7 @@ var mysteryLetter = letters[Math.floor(Math.random() * letters.length)];
 
    
     var guesses = [];
-//      // setting guesses left
+//    defining variables
    var guessesLeft = 10;
    var wins =0;
    var losses=0;
@@ -22,6 +22,7 @@ var mysteryLetter = letters[Math.floor(Math.random() * letters.length)];
    document.onkeypress = function(event){
     var  userGuess = event.key
  console.log(mysteryLetter);
+//  if you guess the right letter
       if(userGuess === mysteryLetter){
           wins = wins + 1;
           winner.textContent = "Wins: " + wins;
@@ -32,12 +33,14 @@ var mysteryLetter = letters[Math.floor(Math.random() * letters.length)];
 
       }
       else{
+        //   when you guess the wrong letter
           guessesLeft = guessesLeft - 1;
           numGuessLeft.textContent = "Guesses Left: " + guessesLeft;
           guesses.push(userGuess);
           guessedLetters.textContent = "Previous Guesses: " + guesses;
       }
       
+    //   when you run out of guesses
       if (guessesLeft == 0) {
         mysteryLetter = letters[Math.floor(Math.random() * letters.length)];
         losses = losses + 1;

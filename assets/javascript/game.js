@@ -21,6 +21,7 @@ var mysteryLetter = letters[Math.floor(Math.random() * letters.length)];
    var mysteryLetter = letters[Math.floor(Math.random() * letters.length)];
    document.onkeypress = function(event){
     var  userGuess = event.key
+    userGuess = userGuess.toUpperCase()
  console.log(mysteryLetter);
 //  if you guess the right letter
       if(userGuess === mysteryLetter){
@@ -54,5 +55,3 @@ var mysteryLetter = letters[Math.floor(Math.random() * letters.length)];
     }
 }
 
-
-// });
